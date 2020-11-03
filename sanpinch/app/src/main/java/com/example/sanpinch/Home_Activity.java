@@ -6,16 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class WelcomeActivity extends AppCompatActivity {
+public class Home_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
+        setContentView(R.layout.activity_home_);
     }
 
-    public void onStartButtonClick(View view){
-        Intent intent = new Intent(this, Home_Activity.class);
+    public void goProfileManagement(View view){
+        Intent intent = new Intent(this, Profilelist_Activity.class);
 
         startActivity(intent);
     }
