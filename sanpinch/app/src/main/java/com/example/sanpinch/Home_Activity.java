@@ -14,8 +14,26 @@ public class Home_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_home_);
     }
 
-    public void goProfileManagement(View view){
-        Intent intent = new Intent(this, Profilelist_Activity.class);
+    public void goPlayerCardManagement(View view){
+        Intent intent = new Intent(this, Pcmng_activity.class);
+
+        startActivity(intent);
+    }
+
+    public void goStoryManagement(View view){
+        Intent intent = new Intent(this, StorymngActivity.class);
+
+        startActivity(intent);
+    }
+
+    public void goJoinGame(View view){
+        Intent intent = new Intent(this, JoinActivity.class);
+
+        startActivity(intent);
+    }
+
+    public void goHostGame(View view){
+        Intent intent = new Intent(this, HostActivity.class);
 
         startActivity(intent);
     }

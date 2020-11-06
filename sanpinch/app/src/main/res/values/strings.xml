@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">SanPinch</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="age_default">Age: </string>
+    <string name="hp_format">HP: %1$d / %2$d</string>
+    <string name="mp_format">MP: %1$d / %2$d</string>
+    <string name="san_format">SAN: %1$d / %2$d</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="character_format">
+        STR:  %1$D    INT:  %7$D\n
+        CON:  %2$D    SIZE: %8$D\n
+        DEX:  %3$D    EDU:  %9$D\n
+        APP:  %4$D    KNOW: %10$D\n
+        POW:  %5$D    DB:   %11$D\n
+        IDEA: %6$D    LUCK: %12$D\n
+        Cthulhu Mythos:     %13$D\n
+    </string>
+    <string name="title_activity_join">JoinActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
