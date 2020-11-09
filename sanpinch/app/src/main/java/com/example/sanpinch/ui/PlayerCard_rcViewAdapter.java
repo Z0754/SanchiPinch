@@ -1,5 +1,6 @@
 package com.example.sanpinch.ui;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,10 +16,12 @@ import java.util.List;
 
 public class PlayerCard_rcViewAdapter extends RecyclerView.Adapter<PlayerCard_rcViewAdapter.mViewHolder> {
 
-    private List<PlayerCard> mValues;
+    private final onPlayerCardSelectedListener mListener;
+    private final List<PlayerCard> mValues;
     private int count;
-    public PlayerCard_rcViewAdapter(List<PlayerCard> playerCards) {
+    public PlayerCard_rcViewAdapter(List<PlayerCard> playerCards, onPlayerCardSelectedListener listener) {
         mValues = playerCards;
+        mListener = listener;
         count = playerCards.size();
     }
 
@@ -33,9 +36,22 @@ public class PlayerCard_rcViewAdapter extends RecyclerView.Adapter<PlayerCard_rc
     }
 
     @Override
-    public void onBindViewHolder(@NonNull mViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final mViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.update();
+//        holder.mView.setBackgroundColor(Color.parseColor("#A4FF4322"));
+        holder.mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (null != mListener) {
+                    // Notify the active callbacks interface (the activity, if the
+                    // fragment is attached to one) that an item has been selected.
+
+                    mListener.onPlayerCardSelected(holder.mItem, R.integer.displayPlayerCard);
+                    // TODO: set onclick listener for buttons in holder
+                }
+            }
+        });
     }
 
     @Override

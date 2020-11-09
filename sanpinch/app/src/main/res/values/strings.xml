@@ -7,14 +7,14 @@
     <string name="san_format">SAN: %1$d / %2$d</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="character_format">
-        STR:  %1$D    INT:  %7$D\n
-        CON:  %2$D    SIZE: %8$D\n
-        DEX:  %3$D    EDU:  %9$D\n
-        APP:  %4$D    KNOW: %10$D\n
-        POW:  %5$D    DB:   %11$D\n
-        IDEA: %6$D    LUCK: %12$D\n
-        Cthulhu Mythos:     %13$D\n
+    <string name="character_format">\u0020
+        STR:  %1$02d \u0020\u0020\u0020\u0020\u0020 INT:  %7$02d\n
+        CON:  %2$02d \u0020\u0020\u0020\u0020\u0020   SIZE: %8$02d\n
+        DEX:  %3$02d \u0020\u0020\u0020\u0020\u0020\u0020   EDU:  %9$02d\n
+        APP:  %4$02d \u0020\u0020\u0020\u0020\u0020\u0020   KNOW: %10$02d\n
+        POW:  %5$02d \u0020\u0020\u0020\u0020\u0020   DB:   %11$02d\n
+        IDEA: %6$02d \u0020\u0020\u0020\u0020\u0020   LUCK: %12$02d\n
+        Cthulhu Mythos: \u0020\u0020\u0020\u0020    %13$02d\n
     </string>
     <string name="title_activity_join">JoinActivity</string>
     <!-- Strings used for fragments for navigation -->

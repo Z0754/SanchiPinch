@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="displayPlayerCard">0</integer>
+    <integer name="joinGameWithPlayerCard">1</integer>
+    <integer name="newPlayerCard">2</integer>
+
+    <integer name="join">4</integer>
+
+</resources>

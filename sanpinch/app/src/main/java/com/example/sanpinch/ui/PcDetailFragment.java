@@ -1,5 +1,6 @@
 package com.example.sanpinch.ui;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.sanpinch.R;
 import com.example.sanpinch.data.PlayerCard;
@@ -18,32 +21,20 @@ import com.example.sanpinch.data.PlayerCard;
  */
 public class PcDetailFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "player_card";
-    private static final String ARG_PARAM2 = "detail_type";
-
-    // TODO: Rename and change types of parameters
-    private PlayerCard player_card;
-    private int detail_type;
+    private static PlayerCard playerCard;
+    private static int detail_type;
+    private onPlayerCardSelectedListener mListener;
 
     public PcDetailFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PcDetailFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static PcDetailFragment newInstance(PlayerCard pc, int type) {
         PcDetailFragment fragment = new PcDetailFragment();
         Bundle args = new Bundle();
-
+        playerCard = pc;
+        detail_type = type;
         fragment.setArguments(args);
         return fragment;
     }
@@ -58,6 +49,58 @@ public class PcDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pc_detail, container, false);
+        View mView = inflater.inflate(R.layout.fragment_pc_detail, container, false);
+
+        TextView pcName = mView.findViewById(R.id.pcdetail_name_tv);
+        TextView pcJob = mView.findViewById(R.id.pcdetail_job_tv);
+        TextView pcAge = mView.findViewById(R.id.pcdetail_age_tv);
+        TextView pcHP = mView.findViewById(R.id.pcdetail_hp_tv);
+        TextView pcMP = mView.findViewById(R.id.pcdetail_mp_tv);
+        TextView pcSan = mView.findViewById(R.id.pcdetail_san_tv);
+
+        TextView pcChar = mView.findViewById(R.id.pcdetail_char_tv);
+
+        pcName.setText(playerCard.name);
+        pcJob.append(playerCard.job);
+        pcAge.append(""+playerCard.age);
+
+        pcHP.setText(mView.getContext().getResources().getString(
+                R.string.hp_format, playerCard.HP, playerCard.HP_max));
+        pcMP.setText(mView.getContext().getResources().getString(
+                R.string.mp_format, playerCard.MP, playerCard.MP_max));
+        pcSan.setText(mView.getContext().getResources().getString(
+                R.string.san_format, playerCard.SAN, playerCard.SAN_MAX));
+        pcChar.setText(mView.getContext().getResources().getString(
+                R.string.character_format,
+                playerCard.STR, playerCard.CON, playerCard.DEX, playerCard.APP, playerCard.POW, playerCard.IDEA,
+                playerCard.INT, playerCard.SIZ, playerCard.EDU, playerCard.KNOW, playerCard.DB, playerCard.LUCK,
+                playerCard.cthulhu_mythos));
+
+        Button action_button = mView.findViewById(R.id.pcdetail_button);
+        if(getArguments().getBoolean("isJoinGame")){
+            action_button.setText("Use this player card");
+            action_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mListener.onPlayerCardSelected(playerCard, R.integer.joinGameWithPlayerCard);
+                }
+            });
+        }else{
+            action_button.setText("Retire");
+        }
+        
+        return mView;
     }
+    
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof onPlayerCardSelectedListener) {
+            mListener = (onPlayerCardSelectedListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnListFragmentInteractionListener");
+        }
+    }
+    
 }
