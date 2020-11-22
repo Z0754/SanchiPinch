@@ -9,10 +9,9 @@ import android.os.Bundle;
 
 import com.example.sanpinch.data.PlayerCard;
 import com.example.sanpinch.ui.GameLobbyFragment;
-import com.example.sanpinch.ui.Newpc_Fragment;
-import com.example.sanpinch.ui.PcDetailFragment;
-import com.example.sanpinch.ui.Pclist_Fragment;
-import com.example.sanpinch.ui.onPlayerCardSelectedListener;
+import com.example.sanpinch.ui.playercard.PcDetailFragment;
+import com.example.sanpinch.ui.playercard.Pclist_Fragment;
+import com.example.sanpinch.ui.playercard.onPlayerCardSelectedListener;
 
 public class JoinActivity extends AppCompatActivity implements onPlayerCardSelectedListener {
     private FragmentManager mFragmentManager;

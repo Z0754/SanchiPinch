@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="newScript">2</integer>
+    <integer name="displayScriptDetail">1</integer>
+
+    <integer name="displayPlayerCard">0</integer>
+    <integer name="joinGameWithPlayerCard">1</integer>
+    <integer name="newPlayerCard">2</integer>
+
+    <integer name="join">4</integer>
+    <integer name="npcDetail">3</integer>
+
+    <integer name="uncheck">-1</integer>
+    <integer name="passCheck">1</integer>
+    <integer name="failCheck">0</integer>
+    <integer name="intro_storycard">0</integer>
+    <integer name="body_storycard">1</integer>
+    <integer name="end_storycard">-1</integer>
+</resources>

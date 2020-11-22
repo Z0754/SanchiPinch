@@ -2,84 +2,70 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.playercard.PcDetailFragment" >
+    tools:context=".ui.npcs.NpcFragment">
 
-    <TextView
-        android:id="@+id/pcdetail_name_tv"
+
+    <Spinner
+        android:id="@+id/npcSelectSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:text="John Smith"
-        android:textColor="#000000"
-        android:textSize="36sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/pcdetail_job_tv"
+        android:id="@+id/npcdetail_job_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="224dp"
+        android:layout_marginStart="8dp"
         android:text="Job: "
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pcdetail_age_tv" />
+        app:layout_constraintStart_toEndOf="@+id/npcSelectSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/npcdetail_age_tv" />
 
     <TextView
-        android:id="@+id/pcdetail_age_tv"
+        android:id="@+id/npcdetail_age_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="224dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:text="@string/age_default"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/npcSelectSpinner"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/pcdetail_hp_tv"
+        android:id="@+id/npcdetail_hp_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
         android:text="HP: 00 / 00"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pcdetail_job_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/npcdetail_job_tv" />
 
     <TextView
-        android:id="@+id/pcdetail_mp_tv"
+        android:id="@+id/npcdetail_mp_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:text="MP: 00 / 00"
-        app:layout_constraintStart_toEndOf="@+id/pcdetail_hp_tv"
-        app:layout_constraintTop_toBottomOf="@+id/pcdetail_job_tv" />
+        app:layout_constraintStart_toEndOf="@+id/npcdetail_hp_tv"
+        app:layout_constraintTop_toBottomOf="@+id/npcdetail_job_tv" />
 
     <TextView
-        android:id="@+id/pcdetail_san_tv"
+        android:id="@+id/npcdetail_san_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:text="SAN: 99 / 99"
-        app:layout_constraintStart_toEndOf="@+id/pcdetail_mp_tv"
-        app:layout_constraintTop_toBottomOf="@+id/pcdetail_job_tv" />
-
-    <Button
-        android:id="@+id/pcdetail_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Use this player card"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/npcdetail_mp_tv"
+        app:layout_constraintTop_toBottomOf="@+id/npcdetail_job_tv" />
 
     <ScrollView
         android:layout_width="0dp"
@@ -88,10 +74,10 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/pcdetail_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pcdetail_mp_tv">
+        app:layout_constraintTop_toBottomOf="@+id/npcdetail_mp_tv">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -99,7 +85,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/pcdetail_biography_tv"
+                android:id="@+id/npcdetail_biography_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -108,7 +94,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/pcdetail_char_tv"
+                android:id="@+id/npcdetail_char_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -119,5 +105,4 @@
                 android:textSize="24sp" />
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,10 +8,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 
 import com.example.sanpinch.data.PlayerCard;
-import com.example.sanpinch.ui.Newpc_Fragment;
-import com.example.sanpinch.ui.PcDetailFragment;
-import com.example.sanpinch.ui.Pclist_Fragment;
-import com.example.sanpinch.ui.onPlayerCardSelectedListener;
+import com.example.sanpinch.ui.playercard.Newpc_Fragment;
+import com.example.sanpinch.ui.playercard.PcDetailFragment;
+import com.example.sanpinch.ui.playercard.Pclist_Fragment;
+import com.example.sanpinch.ui.playercard.onPlayerCardSelectedListener;
 
 public class Pcmng_activity extends AppCompatActivity implements onPlayerCardSelectedListener {
 

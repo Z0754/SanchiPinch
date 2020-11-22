@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Newpc_Fragment" >
+    tools:context=".ui.playercard.Newpc_Fragment" >
 
     <EditText
         android:id="@+id/newpc_name"

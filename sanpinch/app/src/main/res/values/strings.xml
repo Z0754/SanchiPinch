@@ -25,4 +25,20 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="time_estimate_format">"Time estimate (hour) :  "</string>
+    <string name="title_activity_game_play">MainActivity</string>
+    <string name="title_npcs">NPC</string>
+    <string name="title_storycards">Story Cards</string>
+    <string name="title_map">Map</string>
+    <string name="studyDescription">
+        Study of Andrew, a normal room measured 12 ft wide and 12 ft length. \n
+        Player once came to this room before, and noticed something is missing from the room.
+        The player could not saw the window and door, which should be on the north and south side of
+        the room. The location of the window and the door are wall right now. East side of the room is a table
+        and west side of the room is book shelf. Pass observation check of shelf will let the player noticed that
+        some books on the shelf are same, and after asking Andrew those same books will be missing from the shelf.
+        Important item obsidian lion figure with lead base on the table could be found by player after pass check of observation,
+        cthulhu mythos or education.However, only if the player pass check of cthulhu mythos, the player could use it
+        against the formless spawn.
+    </string>
 </resources>

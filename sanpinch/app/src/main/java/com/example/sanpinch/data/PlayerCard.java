@@ -70,7 +70,7 @@ public class PlayerCard {
         DEX = dex;
         APP = app;
 
-        SIZ =siz;
+        SIZ = siz;
         INT = inte;
         EDU = edu;
 
@@ -128,6 +128,60 @@ public class PlayerCard {
         HP = HP_max;
         MP_max = POW;
         MP = MP_max;
+    }
+
+
+    public PlayerCard(int num_samplePC) {
+        rand = new Random();
+        switch (num_samplePC) {
+            case 1:
+                name = "Andrew";
+                job = "Doctore";
+                age = 43;
+                biography = "Formless spawn create this phantom to fool players, does not know he already died." +
+                        "Long time friend with player, interested in ancient egypt culture. Invite player to his house"+
+                        "to celebrate his new discovery, but killed by the formless spawn before players arrive."+
+                        " He is the person set up traps to stuck the formless spawn. ";
+
+                STR = 12;
+                CON = 14;
+                POW = 9;
+                DEX = 15;
+                APP = 13;
+
+                SIZ = 13;
+                INT = 15;
+                EDU = 16;
+
+                cthulhu_mythos = 25;
+                break;
+
+            case 2:
+                name = "Messenger";
+                job = "Formless Spawn";
+                age = 43;
+                biography = "Formless spawn pretend to be the messenger of Thoth (Egypt god of  writing, magic, wisdom, and the moon)"+
+                        "it claim that Andrew summon it to get access to wisdom, but the process of summoning is not perfect"+
+                        ", which makes both itself, andrew and player stucked in this place. Because of the set up by Andrew, "+
+                        "its power is very limited. It does not know how to break it and has to depend on player.";
+
+                STR = 6;
+                CON = 12;
+                POW = 8;
+                DEX = 8;
+                APP = 16;
+
+                SIZ = 13;
+                INT = 15;
+                EDU = 16;
+
+                cthulhu_mythos = 0;
+                break;
+
+        }
+
+        valueInit();
+
     }
 
 }

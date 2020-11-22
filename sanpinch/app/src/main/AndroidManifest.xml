@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".JoinActivity"></activity>
-        <activity android:name=".StorymngActivity" />
+        <activity
+            android:name=".ScriptDetailActivity"
+            android:label="@string/title_activity_game_play"></activity>
+        <activity android:name=".JoinActivity" />
+        <activity android:name=".ScriptmngActivity" />
         <activity android:name=".HostActivity" />
         <activity android:name=".Pcmng_activity" />
         <activity android:name=".Home_Activity" />

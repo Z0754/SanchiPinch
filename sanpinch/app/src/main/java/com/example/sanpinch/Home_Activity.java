@@ -21,7 +21,7 @@ public class Home_Activity extends AppCompatActivity {
     }
 
     public void goStoryManagement(View view){
-        Intent intent = new Intent(this, StorymngActivity.class);
+        Intent intent = new Intent(this, ScriptmngActivity.class);
 
         startActivity(intent);
     }

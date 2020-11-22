@@ -1,4 +1,4 @@
-package com.example.sanpinch.ui;
+package com.example.sanpinch.ui.playercard;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -59,10 +59,11 @@ public class PcDetailFragment extends Fragment {
         TextView pcSan = mView.findViewById(R.id.pcdetail_san_tv);
 
         TextView pcChar = mView.findViewById(R.id.pcdetail_char_tv);
+        TextView pcBio = mView.findViewById(R.id.pcdetail_biography_tv);
 
         pcName.setText(playerCard.name);
         pcJob.append(playerCard.job);
-        pcAge.append(""+playerCard.age);
+        pcAge.append("" + playerCard.age);
 
         pcHP.setText(mView.getContext().getResources().getString(
                 R.string.hp_format, playerCard.HP, playerCard.HP_max));
@@ -75,9 +76,10 @@ public class PcDetailFragment extends Fragment {
                 playerCard.STR, playerCard.CON, playerCard.DEX, playerCard.APP, playerCard.POW, playerCard.IDEA,
                 playerCard.INT, playerCard.SIZ, playerCard.EDU, playerCard.KNOW, playerCard.DB, playerCard.LUCK,
                 playerCard.cthulhu_mythos));
+        pcBio.setText(playerCard.biography);
 
         Button action_button = mView.findViewById(R.id.pcdetail_button);
-        if(getArguments().getBoolean("isJoinGame")){
+        if (detail_type == R.integer.joinGameWithPlayerCard) {
             action_button.setText("Use this player card");
             action_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -85,13 +87,15 @@ public class PcDetailFragment extends Fragment {
                     mListener.onPlayerCardSelected(playerCard, R.integer.joinGameWithPlayerCard);
                 }
             });
-        }else{
+        } else if (detail_type == R.integer.npcDetail) {
+            action_button.setVisibility(View.GONE);
+        } else {
             action_button.setText("Retire");
         }
-        
+
         return mView;
     }
-    
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -102,5 +106,5 @@ public class PcDetailFragment extends Fragment {
                     + " must implement OnListFragmentInteractionListener");
         }
     }
-    
+
 }

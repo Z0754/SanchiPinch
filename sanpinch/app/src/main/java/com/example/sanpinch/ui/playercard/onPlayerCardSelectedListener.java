@@ -1,4 +1,4 @@
-package com.example.sanpinch.ui;
+package com.example.sanpinch.ui.playercard;
 
 import com.example.sanpinch.data.PlayerCard;
 

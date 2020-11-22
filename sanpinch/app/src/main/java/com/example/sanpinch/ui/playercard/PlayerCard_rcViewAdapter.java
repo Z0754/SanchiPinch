@@ -1,6 +1,5 @@
-package com.example.sanpinch.ui;
+package com.example.sanpinch.ui.playercard;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +17,10 @@ public class PlayerCard_rcViewAdapter extends RecyclerView.Adapter<PlayerCard_rc
 
     private final onPlayerCardSelectedListener mListener;
     private final List<PlayerCard> mValues;
-    private int count;
+
     public PlayerCard_rcViewAdapter(List<PlayerCard> playerCards, onPlayerCardSelectedListener listener) {
         mValues = playerCards;
         mListener = listener;
-        count = playerCards.size();
     }
 
     @NonNull
@@ -56,7 +54,7 @@ public class PlayerCard_rcViewAdapter extends RecyclerView.Adapter<PlayerCard_rc
 
     @Override
     public int getItemCount() {
-        return count;
+        return mValues.size();
     }
 
 
