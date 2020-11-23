@@ -27,10 +27,12 @@ import com.example.sanpinch.ui.playercard.onPlayerCardSelectedListener;
 
 import java.util.ArrayList;
 
+import static com.example.sanpinch.Home_Activity.appViewModel;
+
 public class NpcFragment extends Fragment {
 
 
-    private ArrayList<PlayerCard> npcs = ScriptDetailActivity.script.NPC;
+    private ArrayList<PlayerCard> npcs = appViewModel.Scripts.get(appViewModel.curScript).NPC;
     private View mView;
     private int selected=0;
 

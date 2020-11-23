@@ -2,6 +2,7 @@
 <resources>
     <integer name="newScript">2</integer>
     <integer name="displayScriptDetail">1</integer>
+    <integer name="hostGame">3</integer>
 
     <integer name="displayPlayerCard">0</integer>
     <integer name="joinGameWithPlayerCard">1</integer>
@@ -16,4 +17,8 @@
     <integer name="intro_storycard">0</integer>
     <integer name="body_storycard">1</integer>
     <integer name="end_storycard">-1</integer>
+    <integer name="jumpToRoom">7</integer>
+    <integer name="startGame">8</integer>
+    <integer name="newPcAdd">11</integer>
+    <integer name="displayScriptList">23</integer>
 </resources>

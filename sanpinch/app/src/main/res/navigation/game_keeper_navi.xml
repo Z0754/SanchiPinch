@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_keeper_navi"
+    app:startDestination="@+id/navigation_storycards">
+
+    <fragment
+        android:id="@+id/navigation_npcs"
+        android:name="com.example.sanpinch.ui.npcs.NpcFragment"
+        android:label="@string/title_npcs"
+        tools:layout="@layout/fragment_npcs" />
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.example.sanpinch.ui.map.MapFragment"
+        android:label="@string/title_map"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/navigation_storycards"
+        android:name="com.example.sanpinch.ui.storycards.StoryCardsFragment"
+        android:label="@string/title_storycards"
+        tools:layout="@layout/fragment_storycards" />
+
+    <fragment
+        android:id="@+id/navigation_players"
+        android:name="com.example.sanpinch.ui.playercard.PcDetailFragment"
+        android:label="@string/title_players"
+        tools:layout="@layout/fragment_pc_detail" />
+
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="com.example.sanpinch.ui.chat.ChatFragment"
+        android:label="@string/title_chat"
+        tools:layout="@layout/fragment_chat" />
+</navigation>

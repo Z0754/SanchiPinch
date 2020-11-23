@@ -24,7 +24,7 @@ public class Pclist_Fragment extends Fragment {
     private View view;
     private RecyclerView playerCards_rcView;
     private LinearLayoutManager layoutManager;
-    private List<PlayerCard> playerCards;
+    public static List<PlayerCard> playerCards;
     private RecyclerView.Adapter playerCards_adapter;
     private onPlayerCardSelectedListener mListener;
 
@@ -44,17 +44,18 @@ public class Pclist_Fragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_pclist, container, false);
 
-        playerCards = new ArrayList<>();
-        playerCards.add(new PlayerCard(true));
-        playerCards.add(new PlayerCard("Rom", "Student", 35, "", 11, 12, 16, 9, 11, 11, 15, 17, 32));
-        playerCards.get(1).biography = "It was following this incident that the split of Byrgenwerth" +
-                " happened. One of Willem's students, Laurence, believed that the Old Blood discovered" +
-                " in the labyrinth was the way forward for humanity; this clashed with Willem's " +
-                "teachings that Insight and the discovery of the Eldritch Truth was the only way " +
-                "to better humanity. Though Laurence ignored Willem and continued with his research, " +
-                "eventually establishing the Healing Church, he, nevertheless, made an adage with his " +
-                "old master: to 'fear the blood'.";
-
+        if(playerCards == null) {
+            playerCards = new ArrayList<>();
+            playerCards.add(new PlayerCard(true));
+            playerCards.add(new PlayerCard("Rom", "Student", 35, "", 11, 12, 16, 9, 11, 11, 15, 17, 32));
+            playerCards.get(1).biography = "It was following this incident that the split of Byrgenwerth" +
+                    " happened. One of Willem's students, Laurence, believed that the Old Blood discovered" +
+                    " in the labyrinth was the way forward for humanity; this clashed with Willem's " +
+                    "teachings that Insight and the discovery of the Eldritch Truth was the only way " +
+                    "to better humanity. Though Laurence ignored Willem and continued with his research, " +
+                    "eventually establishing the Healing Church, he, nevertheless, made an adage with his " +
+                    "old master: to 'fear the blood'.";
+        }
         playerCards_rcView = (RecyclerView) view.findViewById(R.id.pclist_rcview);
 
 

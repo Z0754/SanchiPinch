@@ -41,4 +41,14 @@
         cthulhu mythos or education.However, only if the player pass check of cthulhu mythos, the player could use it
         against the formless spawn.
     </string>
+    <string name="title_activity_gameplay_keeper">MainActivity</string>
+    <string name="title_activity_game_keeper">MainActivity</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_players">Players</string>
+    <string name="room_format"> Script: Sample Script \n\n
+        Time Estimate: 1 hour\n\n
+        Host: Mohan (A)\n\n
+        Players:\n\n
+        \u0020\u0020\u0020\u0020 Me as: Ludwig
+        </string>
 </resources>

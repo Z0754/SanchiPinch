@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "921897588600",
+    "firebase_url": "https://sanchi-pinch.firebaseio.com",
+    "project_id": "sanchi-pinch",
+    "storage_bucket": "sanchi-pinch.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921897588600:android:b5908be37b5e2ff1895a8d",
+        "android_client_info": {
+          "package_name": "com.example.sanpinch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921897588600-lrp7pk80k36garl71fqripg9gtka9mi4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sanpinch",
+            "certificate_hash": "0d351fde95228fb4cf8b40a4bf06b16844717d28"
+          }
+        },
+        {
+          "client_id": "921897588600-lbgvuucg563n1n6mo0vhhqgv8uuhrp8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFCdEhkwqaVrTMf9aTPVVpNnzqNMX8eZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921897588600-lbgvuucg563n1n6mo0vhhqgv8uuhrp8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

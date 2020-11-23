@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 
 import com.example.sanpinch.data.PlayerCard;
+import com.example.sanpinch.data.mViewModel;
 import com.example.sanpinch.ui.playercard.Newpc_Fragment;
 import com.example.sanpinch.ui.playercard.PcDetailFragment;
 import com.example.sanpinch.ui.playercard.Pclist_Fragment;
@@ -15,6 +16,7 @@ import com.example.sanpinch.ui.playercard.onPlayerCardSelectedListener;
 
 public class Pcmng_activity extends AppCompatActivity implements onPlayerCardSelectedListener {
 
+    public static mViewModel pcmng_vm;
     private FragmentManager mFragmentManager;
     private FragmentTransaction ft;
 
@@ -26,6 +28,7 @@ public class Pcmng_activity extends AppCompatActivity implements onPlayerCardSel
         this.mFragmentManager = getSupportFragmentManager();
         ft = mFragmentManager.beginTransaction();
         Fragment list = new Pclist_Fragment();
+        ((Pclist_Fragment) list).playerCards = pcmng_vm.Investigators;
         Bundle bundle = new Bundle();
         bundle.putBoolean("isJoinGame", false);
         list.setArguments(bundle);
@@ -52,6 +55,17 @@ public class Pcmng_activity extends AppCompatActivity implements onPlayerCardSel
             FragmentTransaction transaction = mFragmentManager.beginTransaction();
             transaction.replace(R.id.pcmng_fragmentcontainer, newPcFragment);
             transaction.addToBackStack(null);
+            transaction.commit();
+        }else if(interact_type == R.integer.newPcAdd){
+            Fragment list = new Pclist_Fragment();
+            pcmng_vm.Investigators.add(pc);
+            ((Pclist_Fragment) list).playerCards = pcmng_vm.Investigators;
+            Bundle bundle = new Bundle();
+            bundle.putBoolean("isJoinGame", false);
+            list.setArguments(bundle);
+            FragmentTransaction transaction = mFragmentManager.beginTransaction();
+            transaction.replace(R.id.pcmng_fragmentcontainer, list);
+
             transaction.commit();
         }
     }

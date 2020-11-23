@@ -42,7 +42,7 @@ public class ScriptListFragment extends Fragment {
     private View view;
     private RecyclerView scripts_rcView;
     private LinearLayoutManager layoutManager;
-    private List<Script> Scripts;
+    public static List<Script> Scripts;
     private RecyclerView.Adapter script_adapter;
     private onScriptSelectedListener mListener;
 
@@ -85,47 +85,48 @@ public class ScriptListFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getContext());
         scripts_rcView.setLayoutManager(layoutManager);
 
-        // sample script
-        Scripts = new ArrayList<Script>();
-        Script sampleScript = new Script("Sample Script");
-        sampleScript.NPC.add(new PlayerCard(1));
-        sampleScript.NPC.add(new PlayerCard(2));
-        sampleScript.map.add(new Place("Study", getResources().getString(R.string.studyDescription)));
-        StoryCard intro = new StoryCard("Intro", R.integer.intro_storycard);
-        intro.branches.add("Finding way out");
-        intro.desc = "Players wake up in the study of Andrew, but could not leave the study. A spirit " +
-                "in form of a human in ancient custom with halo is looking around with Andrew. " +
-                "They are pleased to see player wake up, and Andrew told player that he try to communicate " +
-                "with an ancient egypt god, Thoth, but failed. Now they are all stuck in the room, and need "
-                + "players help to figure out what happened and get out.";
-        intro.events.add(new AbilityCheck("If pass, player will realize Andrew and messenger are lying. ", "IDEA", 50));
+        if(Scripts == null) {
+            // sample script
+            Scripts = new ArrayList<Script>();
+            Script sampleScript = new Script("Sample Script");
+            sampleScript.NPC.add(new PlayerCard(1));
+            sampleScript.NPC.add(new PlayerCard(2));
+            sampleScript.map.add(new Place("Study", getResources().getString(R.string.studyDescription)));
+            StoryCard intro = new StoryCard("Intro", R.integer.intro_storycard);
+            intro.branches.add("Finding way out");
+            intro.desc = "Players wake up in the study of Andrew, but could not leave the study. A spirit " +
+                    "in form of a human in ancient custom with halo is looking around with Andrew. " +
+                    "They are pleased to see player wake up, and Andrew told player that he try to communicate " +
+                    "with an ancient egypt god, Thoth, but failed. Now they are all stuck in the room, and need "
+                    + "players help to figure out what happened and get out.";
+            intro.events.add(new AbilityCheck("If pass, player will realize Andrew and messenger are lying. ", "IDEA", 50));
 
-        StoryCard stage1 = new StoryCard("Finding way out", R.integer.body_storycard);
-        stage1.desc = "Player explore the room and try to find a way out. Andrew does not have any useful info since he is created by the formless spawn. Messenger does not know anything about the enchantment. ";
-        stage1.events.add(new AbilityCheck("Activate when player saw the figure. If pass, player realize the figure is used by Andrew to create enchantment to keep him safe during research." +
-                "If fail, Andrew will tell player that this is the object that may break the wall and ask player destory it, lead to ending Confusing Escape", "KNOW", 50));
-        stage1.events.add(new AbilityCheck("If player realize the function of the figure, player could search the book shelf with this check. " +
-                "If pass, player know what Andrew did and know that hold the figure go to shelf will force the spirit back, which lead to ENDING Formless Revenge. If fail, Andrew hurry player to destroy the figure first.",
-                "IDEA", 75));
+            StoryCard stage1 = new StoryCard("Finding way out", R.integer.body_storycard);
+            stage1.desc = "Player explore the room and try to find a way out. Andrew does not have any useful info since he is created by the formless spawn. Messenger does not know anything about the enchantment. ";
+            stage1.events.add(new AbilityCheck("Activate when player saw the figure. If pass, player realize the figure is used by Andrew to create enchantment to keep him safe during research." +
+                    "If fail, Andrew will tell player that this is the object that may break the wall and ask player destory it, lead to ending Confusing Escape", "KNOW", 50));
+            stage1.events.add(new AbilityCheck("If player realize the function of the figure, player could search the book shelf with this check. " +
+                    "If pass, player know what Andrew did and know that hold the figure go to shelf will force the spirit back, which lead to ENDING Formless Revenge. If fail, Andrew hurry player to destroy the figure first.",
+                    "IDEA", 75));
 
-        stage1.branches.add("Confusing escape");
-        stage1.branches.add("Formless revenge");
-        StoryCard end1 = new StoryCard("Confusing escape", R.integer.end_storycard);
-        end1.desc = "Players crush the lion figure on the ground, but lose conscious immediately. " +
-                "Players wake up and find nobody else are in the room, only the broken figure remind player that the whole thing is real.";
-        end1.events.add(new AbilityCheck("If pass, players get reward of 3 point of Cthulhu Mythos. If fail, get 0 point.", "LUCK", 45));
+            stage1.branches.add("Confusing escape");
+            stage1.branches.add("Formless revenge");
+            StoryCard end1 = new StoryCard("Confusing escape", R.integer.end_storycard);
+            end1.desc = "Players crush the lion figure on the ground, but lose conscious immediately. " +
+                    "Players wake up and find nobody else are in the room, only the broken figure remind player that the whole thing is real.";
+            end1.events.add(new AbilityCheck("If pass, players get reward of 3 point of Cthulhu Mythos. If fail, get 0 point.", "LUCK", 45));
 
-        StoryCard end2 = new StoryCard("Formless revenge", R.integer.end_storycard);
-        end2.desc = "Players force the formless spawn back, but Andrew is nowhere to find. ";
-        end2.events.add(new AbilityCheck("If pass, players get reward of 10 point of Cthulhu Mythos. If fail, get 5 point. ", "LUCK", 45));
+            StoryCard end2 = new StoryCard("Formless revenge", R.integer.end_storycard);
+            end2.desc = "Players force the formless spawn back, but Andrew is nowhere to find. ";
+            end2.events.add(new AbilityCheck("If pass, players get reward of 10 point of Cthulhu Mythos. If fail, get 5 point. ", "LUCK", 45));
 
-        sampleScript.StoryCards.put("Intro", intro);
-        sampleScript.StoryCards.put("Finding way out", stage1);
-        sampleScript.StoryCards.put("Confusing escape", end1);
-        sampleScript.StoryCards.put("Formless revenge", end2);
+            sampleScript.StoryCards.put("Intro", intro);
+            sampleScript.StoryCards.put("Finding way out", stage1);
+            sampleScript.StoryCards.put("Confusing escape", end1);
+            sampleScript.StoryCards.put("Formless revenge", end2);
 
-        Scripts.add(sampleScript);
-
+            Scripts.add(sampleScript);
+        }
         // specify an adapter (see also next example)
         script_adapter = new Script_rcViewAdapter(Scripts, mListener);
         scripts_rcView.setAdapter(script_adapter);

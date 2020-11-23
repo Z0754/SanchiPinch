@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.playercard.Newpc_Fragment" >
+    tools:context=".ui.playercard.Newpc_Fragment">
 
     <EditText
         android:id="@+id/newpc_name"
@@ -52,4 +52,31 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/newpc_desc"
+        android:layout_width="276dp"
+        android:layout_height="311dp"
+        android:layout_marginTop="32dp"
+        android:background="@android:drawable/editbox_dropdown_light_frame"
+        android:ems="10"
+        android:hint="Describe this new investigator..."
+        android:inputType="textMultiLine"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newpc_job" />
+
+    <EditText
+        android:id="@+id/newpc_job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Job"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newpc_age" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,19 +12,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sanpinch.R;
 import com.example.sanpinch.ScriptDetailActivity;
 import com.example.sanpinch.data.AbilityCheck;
+import com.example.sanpinch.data.Script;
 import com.example.sanpinch.data.StoryCard;
 
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+
+import static com.example.sanpinch.Home_Activity.appViewModel;
+import static com.example.sanpinch.ScriptDetailActivity.script;
 
 
 public class StoryCardsFragment extends Fragment {
@@ -33,7 +34,7 @@ public class StoryCardsFragment extends Fragment {
     private View mView;
     private LinearLayoutManager layoutManager;
     private RecyclerView.Adapter events_adapter;
-    private StoryCard cur_story = ScriptDetailActivity.script.StoryCards.get(ScriptDetailActivity.script.cur_story);
+    private StoryCard cur_story = script.StoryCards.get("Intro");
     private ArrayList<AbilityCheck> events = cur_story.events;
 
     private TextView title;
@@ -44,11 +45,11 @@ public class StoryCardsFragment extends Fragment {
 
         mView = inflater.inflate(R.layout.fragment_storycards, container, false);
 
-        updateDisplay();
 
-        final String[] storys = new String[ScriptDetailActivity.script.StoryCards.size()];
+
+        final String[] storys = new String[script.StoryCards.size()];
         int i = 0;
-        for (String k : ScriptDetailActivity.script.StoryCards.keySet()) {
+        for (String k : script.StoryCards.keySet()) {
             storys[i] = k;
             i++;
         }
@@ -64,7 +65,7 @@ public class StoryCardsFragment extends Fragment {
         storycard_select.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                ScriptDetailActivity.script.cur_story= storys[i];
+                appViewModel.curStoryCard = storys[i];
                 updateDisplay();
 
             }
@@ -75,12 +76,13 @@ public class StoryCardsFragment extends Fragment {
             }
         });
 
+        updateDisplay();
 
         return mView;
     }
 
     private void updateDisplay() {
-        cur_story = ScriptDetailActivity.script.StoryCards.get(ScriptDetailActivity.script.cur_story);
+        cur_story = script.StoryCards.get(appViewModel.curStoryCard);
         title = mView.findViewById(R.id.StoryCardName);
         title.setText(cur_story.title);
 

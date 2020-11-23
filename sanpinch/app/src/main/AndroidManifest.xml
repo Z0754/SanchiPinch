@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sanpinch">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,14 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".ScriptDetailActivity"
-            android:label="@string/title_activity_game_play"></activity>
+        <activity android:name=".GamePlayerActivity"></activity>
+        <activity android:name=".GameKeeperActivity" />
+        <activity android:name=".ScriptDetailActivity" />
         <activity android:name=".JoinActivity" />
         <activity android:name=".ScriptmngActivity" />
         <activity android:name=".HostActivity" />
         <activity android:name=".Pcmng_activity" />
-        <activity android:name=".Home_Activity" />
+        <activity
+            android:name=".Home_Activity"
+            android:persistent="true" />
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

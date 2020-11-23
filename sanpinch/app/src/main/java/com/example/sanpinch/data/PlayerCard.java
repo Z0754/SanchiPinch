@@ -106,6 +106,33 @@ public class PlayerCard {
 
     }
 
+    public PlayerCard(String givname, String givjob, int givage, String bio){
+        rand = new Random();
+
+        name = givname;
+        job = givjob;
+        age = givage;
+        biography = bio;
+
+        rollNewPc();
+    }
+
+    public void rollNewPc(){
+        STR = rand.nextInt(6)+rand.nextInt(6)+rand.nextInt(6);
+        CON = rand.nextInt(6)+rand.nextInt(6)+rand.nextInt(6);
+        POW = rand.nextInt(6)+rand.nextInt(6)+rand.nextInt(6);
+        DEX = rand.nextInt(6)+rand.nextInt(6)+rand.nextInt(6);
+        APP = rand.nextInt(6)+rand.nextInt(6)+rand.nextInt(6);
+
+        SIZ = rand.nextInt(6)+rand.nextInt(6)+6;
+        INT = rand.nextInt(6)+rand.nextInt(6)+6;
+        EDU = rand.nextInt(6)+rand.nextInt(6)+rand.nextInt(6);
+
+        cthulhu_mythos = 0;
+
+        valueInit();
+    }
+
     public void valueInit() {
         IDEA = INT * 5;
         LUCK = POW * 5;

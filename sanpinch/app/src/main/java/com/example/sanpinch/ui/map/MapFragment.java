@@ -22,10 +22,12 @@ import com.example.sanpinch.data.PlayerCard;
 
 import java.util.ArrayList;
 
+import static com.example.sanpinch.Home_Activity.appViewModel;
+
 public class MapFragment extends Fragment {
 
     private View mView;
-    private ArrayList<Place> map = ScriptDetailActivity.script.map;
+    private ArrayList<Place> map = appViewModel.Scripts.get(appViewModel.curScript).map;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

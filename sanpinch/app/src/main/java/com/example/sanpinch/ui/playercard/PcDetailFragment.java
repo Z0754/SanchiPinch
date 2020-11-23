@@ -14,6 +14,8 @@ import android.widget.TextView;
 import com.example.sanpinch.R;
 import com.example.sanpinch.data.PlayerCard;
 
+import static com.example.sanpinch.Home_Activity.appViewModel;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link PcDetailFragment#newInstance} factory method to
@@ -60,6 +62,10 @@ public class PcDetailFragment extends Fragment {
 
         TextView pcChar = mView.findViewById(R.id.pcdetail_char_tv);
         TextView pcBio = mView.findViewById(R.id.pcdetail_biography_tv);
+
+        if(playerCard ==null){
+            playerCard = appViewModel.Investigators.get(0);
+        }
 
         pcName.setText(playerCard.name);
         pcJob.append(playerCard.job);
